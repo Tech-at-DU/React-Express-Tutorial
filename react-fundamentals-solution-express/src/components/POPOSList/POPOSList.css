@@ -1,0 +1,60 @@
+.POPOSList-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 2em;
+	/* max-width: 1200px;
+	margin: auto; */
+	padding: 2em;
+}
+
+.POPOSSpace {
+	/* Styles for the root element */
+}
+
+.POPOSSpace img {
+	/* Styles for img inside this component */
+}
+
+
+.POPOSList form {
+	width: 33.33%;
+	margin: 0 2rem;
+	display: flex;
+	align-items: flex-start;
+}
+
+.POPOSList form input, .POPOSList form button {
+	padding: 1em;
+	margin: 0;
+	border: 1px solid;
+	font-size: 1rem;
+}
+
+.POPOSList form input {
+	flex: 1;
+	border-top-left-radius: 0.5em;
+	border-bottom-left-radius: 0.5em;
+}
+
+.POPOSList form button {
+	border-top-right-radius: 0.5em;
+	border-bottom-right-radius: 0.5em;
+	background-color: #000;
+	color: #fff;
+	border: 1px solid #000;
+}
+
+/* Smaller screens and tablets */
+@media only screen and (max-width: 960px) {
+	.POPOSList {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+/* Small screens mobile */
+@media only screen and (max-width: 700px) {
+	.POPOSList {
+		grid-template-columns: 1fr;
+	}
+}
+

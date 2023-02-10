@@ -1,0 +1,40 @@
+.POPOSSpace {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.POPOSSpace img {
+  width: 100%;
+  height: auto;
+}
+
+.POPOSSpace .POPOSSpace-title {
+  text-decoration: none;
+  color: #000;
+}
+
+.POPOSSpace h1 {
+  display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	margin: 0;
+	font-weight: lighter;
+	background-color: rgba(255, 255, 255, 0.80);
+	padding: 1rem;
+	text-align: left;
+}
+
+.POPOSSpace .POPOSSpace-info {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	text-align: right;
+}
+
+.POPOSSpace .POPOSSpace-info div {
+	display: inline-block;
+	padding: 0.25em 0.5em;
+	background-color: rgba(255, 255, 255, 0.9);
+}
