@@ -5,7 +5,9 @@ function readJsonFileSync(filepath, encoding) {
     encoding = 'utf8'
   }
   const file = fs.readFileSync(filepath, encoding)
-  return JSON.parse(file)
+  const data = JSON.parse(file)
+  data.forEach((item, i) => item.id = i)
+  return data
 }
 
 function getConfig(file) {

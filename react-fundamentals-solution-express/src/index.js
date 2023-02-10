@@ -11,9 +11,9 @@ import POPOSDetails from './components/POPOSDetails/POPOSDetails'
 
 // Add React Query 
 import { QueryClientProvider, QueryClient } from 'react-query';
-
+// Create a QueryClient
 const queryClient = new QueryClient()
-
+// Wrap your App in the QueryClientProvider
 ReactDOM.render(
   <QueryClientProvider client={queryClient}>
     <Router>

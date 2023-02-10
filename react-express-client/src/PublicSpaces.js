@@ -3,19 +3,29 @@ import { QueryClientProvider, useQuery } from 'react-query'
 
 // This example uses React Query. 
 // To use this you must create a query client 
-// and add a QueryClientProvider. 
-// See index.js
+// and add a QueryClientProvider. See index.js
 
 function PublicSpaces() {
-  // Load /sfpopos using react-query
+  // Load /sfpopos using useQuery
   const { isLoading, error, data } = useQuery('data', () => {
     return fetch('/sfpopos').then(res => res.json())
   });
+  // isLoading: a boolean true if loading
+  // error: an error object with a message property
+  // data: the data loaded from the server
 
   return (
-      <div className="App">
+      <div className="PublicSpaces">
         <h2>Public Spaces</h2>
-        { isLoading ? "Loading..." : data.map(item => item.title) }
+        <ul>
+          {/* If isLoading is false map the data to components */}
+          { isLoading ? "Loading..." : data.map(item => <li>{item.title}</li>) }
+          {/* 
+          The sfpopos data has more properties
+          Challenge: try and render another property here like the address 
+          Challenge: Create a component and render that in place of the li 
+          */}
+        </ul>
       </div>
   );
 }

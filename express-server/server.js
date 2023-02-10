@@ -3,32 +3,39 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const datajson = require('./sfpopos-data')
-// const quotes = require('./services/quotes');
-
 const { random, randomD, randomRolls } = require('./utils')
-const req = require('express/lib/request')
 
+// Create server
 const app = express()
-
+// Add some middleware
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-// ** Proxy from React can't get at '/' for some reason?
-// Apparently this is expected behavior... **
-// Test this route with: localhost:4000/
-app.get('/', (req, res) => {
-  res.json({ message: 'Hello World' })
+// **********************************************************
+// Test this route in your browser it returns a json object. 
+// Add some new properties if you like. 
+app.get('/about', (req, res) => {
+  // An object
+  const message = { message: 'Hello World' }
+  // send a response as json
+  res.json(message)
 })
 
+
+// **********************************************************
+// This route retursn the shpopos json data. 
 app.get('/sfpopos', (req, res) => {
+  // You could load data from a database and send 
+  // it out as a response
   // send the sfpopos data 
   console.log('sfpopos requested!')
   res.json(datajson)
 })
 
+
 // A simple route that returns a JSON object
 // Test this route with:
-app.get('/about', (req, res) => {
+app.get('/fruit', (req, res) => {
   // This Object is converted to JSON and returned.
   res.json({ 
     message: 'This is a message from the server',

@@ -1,24 +1,32 @@
 import POPOSSpace from '../POPOSSpace/POPOSSpace';
 import './POPOSList.css';
 import { useState } from 'react'
+// This component will fetch data from the server. 
+// 1) Import useQuery
 import { useQuery } from 'react-query';
 
 function POPOSList() {
-  const [ query, setQuery ] = useState('')
+  const [ query, setQuery ] = useState('') // Ignore this it's used for the search form
+  
+  // 2) Set up a query
   const { isLoading, error, data } = useQuery('data', () => {
     return fetch('/sfpopos').then(res => res.json())
   });
 
+  // 3) Display this if the data is loading
   if (isLoading) {
     return <h1>Loading...</h1>
   }
 
+  // 4) Display this if there is an error message from the server
   if (error) {
     return <h1>Error: {error.message}</h1>
   }
 
-  console.log(isLoading, error, data)
+  // 5) You can log the data from the serevr for testing
+  // console.log(isLoading, error, data)
 
+  // 6) From here everything is same as it was in the tutorial project! 
   const spaces = data
     .filter(obj => {
       // true if query is in title
@@ -29,7 +37,6 @@ function POPOSList() {
       return inTitle || inAddress
     })
     .map(({ id, title, address, images, hours }, i) => {
-  // const spaces = data.map(({ title, address, images, hours }, i) => {
     return (
       <POPOSSpace
         id={id}
