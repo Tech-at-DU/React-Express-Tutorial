@@ -1,9 +1,9 @@
 
-import { QueryClientProvider, useQuery } from 'react-query'
+import { useQuery } from 'react-query'
 
 // This example uses React Query. 
-// To use this you must create a query client 
-// and add a QueryClientProvider. See index.js
+// Rect Query requires a QueryClientProvider. 
+// See index.js to see where this is setup. 
 
 function PublicSpaces() {
   // Load /sfpopos using useQuery
