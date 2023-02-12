@@ -10,6 +10,7 @@ function POPOSList() {
   
   // 2) Set up a query
   const { isLoading, error, data } = useQuery('data', () => {
+    console.log('loading sfpopos list')
     return fetch('/sfpopos').then(res => res.json())
   });
 
@@ -20,6 +21,7 @@ function POPOSList() {
 
   // 4) Display this if there is an error message from the server
   if (error) {
+    console.log(error)
     return <h1>Error: {error.message}</h1>
   }
 

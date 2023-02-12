@@ -12,6 +12,8 @@ function App() {
       {/* <SimpleFetch /> */}
 
       {/* Fetch the SFPOPOS Data */}
+
+      {/* Create a new  */}
       <PublicSpaces />
     </div>
   );
