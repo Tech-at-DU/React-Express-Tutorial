@@ -8,6 +8,11 @@ module.exports = router;
 
 //Post Method
 router.post('/post', async (req, res) => {
+	const { title, desc, address, hours, lat, lon } = req.body
+
+	console.log(title, desc, address, hours, lat, lon)
+	res.json({ title, desc, address, hours, lat, lon })
+
   // const data = new Model({
   //   name: req.body.name,
   //   age: req.body.age
@@ -22,7 +27,7 @@ router.post('/post', async (req, res) => {
   // }
 })
 
-//Get all Method
+// Get all Method
 router.get('/sfpopos', async (req, res) => {
   console.log('/sfpopos')
     try {
@@ -33,8 +38,8 @@ router.get('/sfpopos', async (req, res) => {
     }
 })
 
-//Get by ID Method
-router.get('/getone/:id', async (req, res) => { 
+// Get by ID Method
+router.get('/sfpopos/:id', async (req, res) => { 
 	console.log('get one')
 	try {
 		const options = { id: req.params.id.toString() }
