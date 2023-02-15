@@ -7,7 +7,7 @@ import { useQuery } from 'react-query'
 
 function PublicSpaces() {
   // Load /sfpopos using useQuery
-  const { isLoading, error, data } = useQuery('data', () => {
+  const { isLoading, error, data } = useQuery('sfpopos', () => {
     return fetch('/sfpopos').then(res => res.json())
   });
   // isLoading: a boolean true if loading

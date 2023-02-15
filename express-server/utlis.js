@@ -14,9 +14,10 @@ function loadJSON(file) {
   return readJsonFileSync(filepath);
 }
 
-// load sfpopos-data.json
-const json = loadJSON('./sfpopos-data.json');
-
+// Challenge: Use one of your own JSON files or generate a random 
+// json file here: https://www.mockaroo.com
+// Load your json using the function above. 
+// Test your json here. 
 // console.log(json)
 
-module.exports = json;
+module.exports = loadJSON;

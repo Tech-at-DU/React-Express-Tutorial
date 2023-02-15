@@ -24,24 +24,33 @@ router.post('/post', async (req, res) => {
 
 //Get all Method
 router.get('/sfpopos', async (req, res) => {
-  console.log('api/sfpopos')
+  console.log('/sfpopos')
     try {
         const data = await Model.find();
         res.json(data)
-    }
-    catch(error){
+    } catch(error) {
         res.status(500).json({message: error.message})
     }
 })
 
 //Get by ID Method
-router.get('/getOne/:id', (req, res) => {
-    res.send(req.params.id)
+router.get('/getone/:id', async (req, res) => { 
+	console.log('get one')
+	try {
+		const options = { id: req.params.id.toString() }
+		const data = await Model.findOne(options)
+		console.log(options)
+		console.log(req.params.id)
+		console.log(data)
+		res.json(data)
+	} catch(error) {
+		res.status(500).json({message: error.message})
+	}
 })
 
 //Update by ID Method
 router.patch('/update/:id', (req, res) => {
-    res.send('Update by ID API')
+  res.send('Update by ID API')
 })
 
 //Delete by ID Method

@@ -9,7 +9,7 @@ function POPOSList() {
   const [ query, setQuery ] = useState('') // Ignore this it's used for the search form
   
   // 2) Set up a query
-  const { isLoading, error, data } = useQuery('data', () => {
+  const { isLoading, error, data } = useQuery('sfpopos', () => {
     console.log('loading sfpopos list')
     return fetch('/sfpopos').then(res => res.json())
   });

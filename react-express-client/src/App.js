@@ -13,7 +13,11 @@ function App() {
 
       {/* Fetch the SFPOPOS Data */}
 
-      {/* Create a new  */}
+      {/* Challenge: After testing the components above make your own component. 
+      See the challenges in express-server/server.js. You'll make your own route 
+      that serves your own json data. 
+      Create a component in this project that display that data. */}
+
       <PublicSpaces />
     </div>
   );

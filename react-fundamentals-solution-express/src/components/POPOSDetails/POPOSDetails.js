@@ -9,7 +9,7 @@ function POPOSDetails(props) {
   const params = useParams()
 
   // 2) setup a query
-  const { isLoading, error, data } = useQuery('data', () => {
+  const { isLoading, error, data } = useQuery('sfpopos', () => {
     return fetch('/sfpopos').then(res => res.json())
   });
 

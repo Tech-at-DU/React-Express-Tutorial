@@ -2,7 +2,10 @@
 /* eslint-disable semi */
 const express = require('express')
 const bodyParser = require('body-parser')
-const datajson = require('./sfpopos-data')
+const loadJSON = require('./utlis')
+
+// load sfpopos-data.json
+const datajson = loadJSON('./sfpopos-data.json');
 
 // Create server
 const app = express()
@@ -14,11 +17,14 @@ app.use(bodyParser.json())
 // Test this route in your browser it returns a json object.
 // Add some new properties if you like.
 app.get('/about', (req, res) => {
-  // An object
-  const message = { message: 'Hello World' }
+  // An object to convert to json
+  const message = { message: 'Hello World', foo: 'bar' }
   // send a response as json
   res.json(message)
 })
+
+// Challenge: Modify the object above and test this route 
+// you should see the new added properties. 
 
 
 // **********************************************************
@@ -46,6 +52,12 @@ app.get('/fruit', (req, res) => {
     ],
   })
 })
+
+// Challenge: Add a new route and serve your own JSON data. 
+// Create a new JSON file and save it to this project folder. 
+// Create a new route below that serves this file to the route 
+// as json. 
+// Test your route to see the json data in the browser. 
 
 const port = 4000
 app.listen(port, () => console.log(`LISTENING ON PORT ${port}`))
