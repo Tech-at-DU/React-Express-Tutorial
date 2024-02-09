@@ -12,7 +12,7 @@ Each of the projects is contained in its folder with its package json. You shoul
 
 **Start the server**
 
-From the _express-server_ directory install dependencies and launch the server: 
+**From the _express-server_ directory** install dependencies and launch the server: 
 
 ```
 npm install
