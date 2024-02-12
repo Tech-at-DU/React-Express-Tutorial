@@ -7,19 +7,27 @@ import { useQuery } from 'react-query'
 
 function PublicSpaces() {
   // Load /sfpopos using useQuery
-  const { isLoading, error, data } = useQuery('sfpopos', () => {
+  const { isLoading, error, data, isError } = useQuery('sfpopos', () => {
     return fetch('/sfpopos').then(res => res.json())
   });
   // isLoading: a boolean true if loading
-  // error: an error object with a message property
-  // data: the data loaded from the server
+  if (isLoading) {
+    return <div>...loading</div>
+  }
 
+  // isError: a bool true when there is an error!
+  // error: an error object with a message property
+  if (isError) {
+    return <span>Error: {error.message}</span>
+  }
+
+  // data: the data loaded from the server
   return (
       <div className="PublicSpaces">
         <h2>Public Spaces</h2>
         <ul>
           {/* If isLoading is false map the data to components */}
-          { isLoading ? <li>Loading...</li> : data.map(item => <li key={item.title}>{item.title}</li>) }
+          { data.map(item => <li key={item.title}>{item.title}</li>) }
           {/* 
           The sfpopos data has more properties
           Challenge: try and render another property here like the address 
