@@ -30,7 +30,7 @@ function SimpleFetch() {
       <h2>Simple Fetch</h2>
       {/* Render the data here */}
       { data ? data.message : null }
-      {/* If there is no data we have to be careful not try and redner it! */}
+      {/* If there is no data we have to be careful not try and render it! */}
     </div>
   )
 }

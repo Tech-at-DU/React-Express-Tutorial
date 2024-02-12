@@ -19,7 +19,7 @@ function PublicSpaces() {
         <h2>Public Spaces</h2>
         <ul>
           {/* If isLoading is false map the data to components */}
-          { isLoading ? "Loading..." : data.map(item => <li>{item.title}</li>) }
+          { isLoading ? <li>Loading...</li> : data.map(item => <li key={item.title}>{item.title}</li>) }
           {/* 
           The sfpopos data has more properties
           Challenge: try and render another property here like the address 

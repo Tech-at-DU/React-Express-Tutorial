@@ -28,11 +28,11 @@ app.get('/about', (req, res) => {
 
 
 // **********************************************************
-// This route retursn the shpopos json data.
+// This route returns the sfpopos json data.
 app.get('/sfpopos', (req, res) => {
   // You could load data from a database and send
   // it out as a response
-  // send the sfpopos data
+  // Here we are sending datajson
   console.log('sfpopos requested!')
   res.json(datajson)
 })
