@@ -1,4 +1,3 @@
-
 import { useQuery } from 'react-query'
 
 // This example uses React Query. 
@@ -7,9 +6,10 @@ import { useQuery } from 'react-query'
 
 function PublicSpaces() {
   // Load /sfpopos using useQuery
-  const { isLoading, error, data, isError } = useQuery('sfpopos', () => {
+  const { isLoading, error, data, isError } = useQuery('sfpopos', async () => {
     return fetch('/sfpopos').then(res => res.json())
   });
+
   // isLoading: a boolean true if loading
   if (isLoading) {
     return <div>...loading</div>
