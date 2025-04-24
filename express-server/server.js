@@ -23,8 +23,8 @@ app.get('/about', (req, res) => {
   res.json(message)
 })
 
-// Challenge: Modify the object above and test this route 
-// you should see the new added properties. 
+// Challenge: Modify the object above and test this route
+// you should see the new added properties.
 
 
 // **********************************************************
@@ -53,11 +53,11 @@ app.get('/fruit', (req, res) => {
   })
 })
 
-// Challenge: Add a new route and serve your own JSON data. 
-// Create a new JSON file and save it to this project folder. 
-// Create a new route below that serves this file to the route 
-// as json. 
-// Test your route to see the json data in the browser. 
+// Challenge: Add a new route and serve your own JSON data.
+// Create a new JSON file and save it to this project folder.
+// Create a new route below that serves this file to the route
+// as json.
+// Test your route to see the json data in the browser.
 
 const port = 4000
 app.listen(port, () => console.log(`LISTENING ON PORT ${port}`))

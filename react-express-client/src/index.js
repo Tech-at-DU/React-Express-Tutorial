@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 
 // This example uses React Query. Follow these steps
 // 1) Import the QueryProvider and QueryClient. 
+// npm install @tanstack/react-query
 import { QueryClientProvider, QueryClient } from 'react-query';
 
 // 2) Create an instance of QueryClient
