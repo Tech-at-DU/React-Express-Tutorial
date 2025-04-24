@@ -15,7 +15,7 @@ pip install -r requirements.txt
 Launch the server. 
 
 ```
-pip install -r requirements.txt
+python3 main.py
 ```
 
 Test the server, open: [http://localhost:4000/about](http://localhost:4000/about)
